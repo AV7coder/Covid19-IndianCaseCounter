@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Covid Cases India</title>
+    </head>
+
+    <body style="background-color:black; text-align: center;">
+        <h2 style="color: rgb(195, 0, 255);">Covid Cases Counter of</h2>
+        <img src="{{url_for('static', filename='image.png')}}" alt="">
+        <h2 style="color:rgb(0, 195, 255)">This web based covid cases counter of India gives you state wise data about
+            active, dead, cured and total cases of Covid-19 in India</h2>
+        <form action="/" method="post">
+            <h3 style="color: white;">State:</span>
+            <input type="text" name="stateName">
+        </form>
+        {% if request.method == 'POST' %}
+        <h1 style="color: rgb(156, 145, 255);">State:{{variable[0]}}</h1>
+        <h1 style="color: rgb(156, 145, 255);">Total Cases:{{variable[1]}}</h1>
+        <h1 style="color: orange;">Active Cases:{{variable[2]}}</h1>
+        <h1 style="color: green;">Cured Cases:{{variable[3]}}</h1>
+        <h1 style="color: red;">Death:{{variable[4]}}</h1>
+        {% endif %}
+    </body>
+
+</html>

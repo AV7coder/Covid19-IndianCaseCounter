@@ -1,0 +1,3 @@
+using python's covid_india module
+get's data from 'covid_india' module and serves it.
+gives state wise data.
